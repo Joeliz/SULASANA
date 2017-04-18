@@ -9,7 +9,8 @@ public class Salasanachecker
 	public static void main(String[] args) {
 	System.out.println("Salasanassa pitää olla väh. 10 merkkiä,"
 				+ "\n väh. 1 iso kirjain,"
-				+ "\n ja ainakin yksi numero.");
+				+ "\n ja ainakin yksi numero."
+			  	+ "\n Välilyöntejä ei saa olla.");
 	while (true)
 	{
 	//Luodaan salasana
@@ -35,6 +36,12 @@ public class Salasanachecker
 		if (!numero(Salasanachecker))
 		{
 			System.out.println("Salasanassa ei ollut numeroa.");
+			continue;
+		}
+		
+		if (!eiValilyonti(Salasanachecker))
+		{
+			System.out.println("Salasanassa oli välilyönti.");
 			continue;
 		}
 		
@@ -91,6 +98,22 @@ public class Salasanachecker
 		}
 
 		return numbah;
+	}
+	
+//Salasanassa ei saa olla välilyöntejä.
+	public static boolean eiValilyonti(String Salasanachecker)
+	{
+		boolean vali = true;
+		
+		for (int i=0; i<Salasanachecker.length()-1; i++)
+		{
+			if (Character.isWhitespace(Salasanachecker.charAt(i)))
+			{
+				vali = false;
+			}
+		}
+		
+		return vali;
 	}
 
 }
