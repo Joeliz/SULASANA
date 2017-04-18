@@ -55,6 +55,7 @@ import java.util.Scanner;
 			}
 			if (isokir = false)
 			{
+				System.out.println("Salasanassa ei ollut isoa kirjainta. Ohjelma sulkeutuu.");
 				System.exit(0);
 			}
 			return isokir;
