@@ -6,24 +6,28 @@ public class Salasanachecker
 	static final String erikoismerkit = "!,#,$,%,^,&,*,|";
 	static String Salasanachecker;
 	
-	public static void main(String[] args) {
-	System.out.println("Salasanassa pitää olla väh. 10 merkkiä,"
-				+ "\n väh. 1 iso kirjain,"
+	public static void main(String[] args)
+	{
+		String[] kiellettyLista = {"LUL", "trol", "69", "1337"};
+	
+	//Aloituspaskaohjeet
+		System.out.println("Salasanassa pitää olla väh. 10 merkkiä,"
+				+ "\n väh. 1 iso kirjain"
 				+ "\n ja ainakin yksi numero."
-			  	+ "\n Välilyöntejä ei saa olla.");
+				+ "\n Välilyöntejä ei saa olla.");
+		
 	while (true)
 	{
 	//Luodaan salasana
 		Scanner lukija = new Scanner(System.in);
-		
-		System.out.print("Anna salasana: ");
+		System.out.print("Luo salasana: ");
 		Salasanachecker = lukija.nextLine();
-	
-	//Tarkastetaan tarkastukset
+			
+	//Kutsutaan ja tarkastetaan tarkastukset
 	
 		if (!salasananPituus(Salasanachecker))
 		{
-			System.out.println("Salasana ei ollut tarpeeksi pitkä.");
+			System.out.println("Salasana ei ollut tarpeeksi pitkä. KappaPride");
 			continue;
 		}
 		
@@ -45,9 +49,15 @@ public class Salasanachecker
 			continue;
 		}
 		
+		if (onkoKiellettySana(Salasanachecker, kiellettyLista))
+		{
+			System.out.println("Salasana sisältää laittomia merkkijonoja.");
+			continue;
+		}
+		
 		else
 		{
-			System.out.println("Hieno salasana, Hermanni.");
+			System.out.println("HIENO SALASANA PogChamp");
 		}
 		
 		break;
@@ -114,6 +124,22 @@ public class Salasanachecker
 		}
 		
 		return vali;
+	}
+
+//Salasanassa ei saa olla laittomia merkkijonoja.
+	public static boolean onkoKiellettySana(String sana, String[] kiellettyLista)
+	{
+		for (int i = 0; i < kiellettyLista.length; i++)
+		{
+			String kiellettysana = kiellettyLista[i];
+			
+			if (sana.toLowerCase().contains(kiellettysana.toLowerCase()))
+			{
+				return true;
+			}
+		}
+		
+		return false;
 	}
 
 }
