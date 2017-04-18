@@ -20,14 +20,28 @@ import java.util.Scanner;
 					+ "\n siinä pitää olla 2 numeroa. ");
 			System.out.print("Luo salasana: ");
 			Salasanachecker = lukija.nextLine();
-
-//Salasanan tulee olla 10 merkkiä pitkä
-			while (Salasanachecker.length() < 10)
-			{
-				System.out.print("Salasanan tulee olla 10 merkkiä pitkä. Yritä uudestaan: ");
-				Salasanachecker = lukija.nextLine();
 			
-			}
+		//Kutsutaan salasanan pituuden tarkastus -metodia
+			salasananPituus(Salasanachecker);
+
+
+//Salasanan tulee olla 10 merkkiä pitkä.
+	public static boolean salasananPituus(String Salasanachecker)
+	{
+		boolean pituus = false;
+		
+		if (Salasanachecker.length() >= 10)
+		{
+			pituus = true;
 		}
+		else
+		{
+			System.out.print("Salasanan tulee olla 10 merkkiä pitkä. Yritä uudestaan: ");
+			Salasanachecker = lukija.nextLine();
+		}
+			
+		return pituus;	
+		}
+	}
 	}
 
