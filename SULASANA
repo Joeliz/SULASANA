@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+	public class Salasanachecker
+
+	{
+
+		private static final Scanner lukija = new Scanner(System.in);
+		static final String erikoismerkit = "!,#,$,%,^,&,*,|";
+		static String Salasanachecker;
+		public static void main(String[] args)
+		{
+
+//Luodaan salasana
+
+			Scanner lukija = new Scanner(System.in);
+			System.out.print("Salasanassa pitää olla  ")
+			System.out.print("Luo salasana: ");
+			Salasanachecker = lukija.nextLine();
+
+//Salasanan tulee olla 10 merkkiä pitkä
+			while (Salasanachecker.length() < 10)
+			{
+				System.out.print("Salasanan tulee olla 10 merkkiä pitkä. Yritä uudestaan: ");
+				Salasanachecker = lukija.nextLine();
+			
+			}
+		}
+	}
