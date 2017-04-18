@@ -1,0 +1,104 @@
+import java.util.Scanner;
+
+public class Salasanachecker
+{
+	private static final Scanner lukija = new Scanner(System.in);
+	static final String erikoismerkit = "!,#,$,%,^,&,*,|";
+	static String Salasanachecker;
+	
+	public static void main(String[] args) {
+	System.out.println("Salasanassa pit‰‰ olla v‰h. 10 merkki‰, "
+				+ "\n sen pit‰‰ sis‰lt‰‰ erikoismerkki,"
+				+ "\n siin‰ pit‰‰ olla v‰h. 1 iso kirjain,"
+				+ "\n se ei saa sis‰lt‰‰ nelj‰‰ samaa kirjainta ja"
+				+ "\n siin‰ pit‰‰ olla ainakin yksi numero. ");
+	while (true)
+	{
+	//Luodaan salasana
+		Scanner lukija = new Scanner(System.in);
+		
+		System.out.print("Anna salasana: ");
+		Salasanachecker = lukija.nextLine();
+			
+	//Kutsutaan salasanan pituuden tarkastus -metodia
+		salasananPituus(Salasanachecker);
+		
+	//Kutsutaan ison kirjaimen tarkastus -metodia
+		isokirjain(Salasanachecker);
+	
+	//Kutsutaan numeron tarkastus -metodia
+		numero(Salasanachecker);
+	
+	//Tarkastetaan tarkastukset
+	
+		if (!salasananPituus(Salasanachecker))
+		{
+			System.out.println("Salasana ei ollut tarpeeksi pitk‰.");
+			continue;
+		}
+		
+		if (!isokirjain(Salasanachecker))
+		{
+			System.out.println("Salasanassa ei ollut isoa kirjainta.");
+			continue;
+		}
+		
+		if (!numero(Salasanachecker))
+		{
+			System.out.println("Salasanassa ei ollut numeroa.");
+			continue;
+		} else {
+			System.out.println("Hyv‰ salasan");
+		}
+		
+		break;
+	
+	}
+	}
+
+//Salasanan tulee olla 10 merkki‰ pitk‰.
+	public static boolean salasananPituus(String Salasanachecker)
+	{
+		boolean pituus = false;
+	
+		if (Salasanachecker.length() >= 10)
+		{
+			pituus = true;
+		}
+		
+		return pituus;	
+	}
+	
+//Salasanassa tulee olla v‰hint‰‰n yksi iso kirjain.
+	public static boolean isokirjain(String Salasanachecker)
+	{
+		boolean isokir = false;
+		
+		for (int i=0; i<Salasanachecker.length()-1; i++)
+		{
+			if (Character.isUpperCase(Salasanachecker.charAt(i)))
+			{
+				isokir = true;
+			}
+		}
+
+		return isokir;
+	}
+	
+//Salasanassa tulee olla v‰hint‰‰n yksi numero.
+	public static boolean numero(String Salasanachecker)
+	{
+		boolean numbah = false;
+		
+		for (int i=0; i<Salasanachecker.length()-1; i++)
+		{
+			if (Character.isDigit(Salasanachecker.charAt(i)))
+			{
+				numbah = true;
+			}
+		}
+
+		return numbah;
+	}
+
+}
