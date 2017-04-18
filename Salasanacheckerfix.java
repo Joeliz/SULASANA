@@ -7,11 +7,9 @@ public class Salasanachecker
 	static String Salasanachecker;
 	
 	public static void main(String[] args) {
-	System.out.println("Salasanassa pitää olla väh. 10 merkkiä, "
-				+ "\n sen pitää sisältää erikoismerkki,"
-				+ "\n siinä pitää olla väh. 1 iso kirjain,"
-				+ "\n se ei saa sisältää neljää samaa kirjainta ja"
-				+ "\n siinä pitää olla ainakin yksi numero. ");
+	System.out.println("Salasanassa pitää olla väh. 10 merkkiä,"
+				+ "\n väh. 1 iso kirjain,"
+				+ "\n ja ainakin yksi numero.");
 	while (true)
 	{
 	//Luodaan salasana
