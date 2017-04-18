@@ -7,11 +7,11 @@ public class Salasanachecker
 	static String Salasanachecker;
 	
 	public static void main(String[] args) {
-	System.out.println("Salasanassa pit‰‰ olla v‰h. 10 merkki‰, "
-				+ "\n sen pit‰‰ sis‰lt‰‰ erikoismerkki,"
-				+ "\n siin‰ pit‰‰ olla v‰h. 1 iso kirjain,"
-				+ "\n se ei saa sis‰lt‰‰ nelj‰‰ samaa kirjainta ja"
-				+ "\n siin‰ pit‰‰ olla ainakin yksi numero. ");
+	System.out.println("Salasanassa pit√§√§ olla v√§h. 10 merkki√§, "
+				+ "\n sen pit√§√§ sis√§lt√§√§ erikoismerkki,"
+				+ "\n siin√§ pit√§√§ olla v√§h. 1 iso kirjain,"
+				+ "\n se ei saa sis√§lt√§√§ nelj√§√§ samaa kirjainta ja"
+				+ "\n siin√§ pit√§√§ olla ainakin yksi numero. ");
 	while (true)
 	{
 	//Luodaan salasana
@@ -19,21 +19,12 @@ public class Salasanachecker
 		
 		System.out.print("Anna salasana: ");
 		Salasanachecker = lukija.nextLine();
-			
-	//Kutsutaan salasanan pituuden tarkastus -metodia
-		salasananPituus(Salasanachecker);
-		
-	//Kutsutaan ison kirjaimen tarkastus -metodia
-		isokirjain(Salasanachecker);
-	
-	//Kutsutaan numeron tarkastus -metodia
-		numero(Salasanachecker);
 	
 	//Tarkastetaan tarkastukset
 	
 		if (!salasananPituus(Salasanachecker))
 		{
-			System.out.println("Salasana ei ollut tarpeeksi pitk‰.");
+			System.out.println("Salasana ei ollut tarpeeksi pitk√§.");
 			continue;
 		}
 		
@@ -47,8 +38,11 @@ public class Salasanachecker
 		{
 			System.out.println("Salasanassa ei ollut numeroa.");
 			continue;
-		} else {
-			System.out.println("Hyv‰ salasan");
+		}
+		
+		else
+		{
+			System.out.println("Hieno salasana, Hermanni.");
 		}
 		
 		break;
@@ -56,7 +50,7 @@ public class Salasanachecker
 	}
 	}
 
-//Salasanan tulee olla 10 merkki‰ pitk‰.
+//Salasanan tulee olla 10 merkki√§ pitk√§.
 	public static boolean salasananPituus(String Salasanachecker)
 	{
 		boolean pituus = false;
@@ -69,7 +63,7 @@ public class Salasanachecker
 		return pituus;	
 	}
 	
-//Salasanassa tulee olla v‰hint‰‰n yksi iso kirjain.
+//Salasanassa tulee olla v√§hint√§√§n yksi iso kirjain.
 	public static boolean isokirjain(String Salasanachecker)
 	{
 		boolean isokir = false;
@@ -85,7 +79,7 @@ public class Salasanachecker
 		return isokir;
 	}
 	
-//Salasanassa tulee olla v‰hint‰‰n yksi numero.
+//Salasanassa tulee olla v√§hint√§√§n yksi numero.
 	public static boolean numero(String Salasanachecker)
 	{
 		boolean numbah = false;
