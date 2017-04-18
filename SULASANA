@@ -41,5 +41,24 @@ import java.util.Scanner;
 			return pituus;	
 		}
 		
+	//Salasanassa tulee olla vähintään yksi iso kirjain.
+		public static boolean isokirjain(String Salasanachecker)
+		{
+			boolean isokir = false;
+		
+			for (int i=0; i<Salasanachecker.length()-1; i++)
+			{
+				if (Character.isUpperCase(Salasanachecker.charAt(i)))
+				{
+					isokir = true;
+				}
+			}
+			if (isokir = false)
+			{
+				System.exit(0);
+			}
+			return isokir;
+		}
+		
 	}
 
