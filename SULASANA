@@ -15,7 +15,7 @@ import java.util.Scanner;
 					+ "\n sen pitää sisältää erikoismerkki,"
 					+ "\n siinä pitää olla väh. 1 iso kirjain,"
 					+ "\n se ei saa sisältää neljää samaa kirjainta ja"
-					+ "\n siinä pitää olla 2 numeroa. ");
+					+ "\n siinä pitää olla numero. ");
 			System.out.print("Luo salasana: ");
 			Salasanachecker = lukija.nextLine();
 			
