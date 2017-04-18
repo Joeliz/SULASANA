@@ -14,7 +14,9 @@ public class Salasanachecker
 		System.out.println("Salasanassa pitää olla väh. 10 merkkiä,"
 				+ "\n väh. 1 iso kirjain"
 				+ "\n ja ainakin yksi numero."
-				+ "\n Välilyöntejä ei saa olla.");
+				+ "\n Välilyöntejä ei saa olla."
+				+ "\n Myös seuraavat merkkijonot ovat laittomia:"
+				+ "\n LUL, trol, 69, 1337");
 		
 	while (true)
 	{
