@@ -1,17 +1,15 @@
 import java.util.Scanner;
 
 	public class Salasanachecker
-
 	{
 
 		private static final Scanner lukija = new Scanner(System.in);
 		static final String erikoismerkit = "!,#,$,%,^,&,*,|";
 		static String Salasanachecker;
+		
 		public static void main(String[] args)
 		{
-
-//Luodaan salasana
-
+		//Luodaan salasana
 			Scanner lukija = new Scanner(System.in);
 			System.out.print("Salasanassa pitää olla väh. 10 merkkiä, "
 					+ "\n sen pitää sisältää erikoismerkki,"
@@ -23,25 +21,25 @@ import java.util.Scanner;
 			
 		//Kutsutaan salasanan pituuden tarkastus -metodia
 			salasananPituus(Salasanachecker);
+		}
 
-
-//Salasanan tulee olla 10 merkkiä pitkä.
-	public static boolean salasananPituus(String Salasanachecker)
-	{
-		boolean pituus = false;
+	//Salasanan tulee olla 10 merkkiä pitkä.
+		public static boolean salasananPituus(String Salasanachecker)
+		{
+			boolean pituus = false;
 		
-		if (Salasanachecker.length() >= 10)
-		{
-			pituus = true;
-		}
-		else
-		{
-			System.out.print("Salasanan tulee olla 10 merkkiä pitkä. Yritä uudestaan: ");
-			Salasanachecker = lukija.nextLine();
-		}
+			if (Salasanachecker.length() >= 10)
+			{
+				pituus = true;
+			}
+			else
+			{
+				System.out.print("Salasanan tulee olla 10 merkkiä pitkä. Yritä uudestaan: ");
+				Salasanachecker = lukija.nextLine();
+			}
 			
-		return pituus;	
+			return pituus;	
 		}
-	}
+		
 	}
 
