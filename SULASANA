@@ -21,6 +21,13 @@ import java.util.Scanner;
 			
 		//Kutsutaan salasanan pituuden tarkastus -metodia
 			salasananPituus(Salasanachecker);
+		
+		//Kutsutaan ison kirjaimen tarkastus -metodia
+			isokirjain(Salasanachecker);
+		
+		//Kutsutaan numeron tarkastus -metodia
+			numero(Salasanachecker);
+	
 		}
 
 	//Salasanan tulee olla 10 merkkiä pitkä.
@@ -59,6 +66,27 @@ import java.util.Scanner;
 				System.exit(0);
 			}
 			return isokir;
+		}
+		
+	//Salasanassa tulee olla vähintään yksi numero.
+		public static boolean numero(String Salasanachecker)
+		{
+			boolean numbah = false;
+			
+			for (int i=0; i<Salasanachecker.length()-1; i++)
+			{
+				if (Character.isDigit(Salasanachecker.charAt(i)))
+				{
+					numbah = true;
+				}
+			}
+			
+			if (numbah = false)
+			{
+				System.out.println("Salasanassa ei ollut numeroa. Ohjelma sulkeutuu.");
+				System.exit(0);
+			}
+			return numbah;
 		}
 		
 	}
